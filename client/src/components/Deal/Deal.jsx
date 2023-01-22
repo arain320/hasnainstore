@@ -1,34 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-
-const Product = () => {
+const Deal = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState([]);
   //get product of special tag from backend
-  const getProduct = async () => {
-    const res = await axios.get("http://localhost:5000/api/special", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    });
-    if (res.data.status === 401 || !res.data) {
-      console.log("something went wrong");
-    } else {
-      setResult(res.data.getItems);
-    }
-  };
   useEffect(() => {
+    const getProduct = async () => {
+      const res = await axios.get("http://localhost:5000/api/deal", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (res) {
+        setResult(res.data.getItems);
+      }
+    };
     getProduct();
   }, []);
   return (
     <>
       <div className="product">
         <div className="product-heading">
-          <span>Just for u</span>
+          <span>Special for today</span>
           <p>
             <NavLink to="/products">
-              Shop more <i class="fa-sharp fa-solid fa-right-long"></i>{" "}
+              Shop more <i class="fa-sharp fa-solid fa-right-long"></i>
             </NavLink>
           </p>
         </div>
@@ -51,7 +48,7 @@ const Product = () => {
                       </div>
                       <div className="price">
                         <span>
-                          Rs:{" "}
+                          Rs:
                           {new Intl.NumberFormat("en-IN", {}).format(
                             product.price
                           )}
@@ -64,7 +61,7 @@ const Product = () => {
                       </div>
                       <div className="star-sold">
                         <div className="star">
-                          <i class="fa-solid fa-star"></i>{" "}
+                          <i class="fa-solid fa-star"></i>
                           <span>{product.star}/5</span>
                         </div>
                         <div className="sold">
@@ -82,4 +79,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Deal;

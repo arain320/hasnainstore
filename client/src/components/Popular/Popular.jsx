@@ -2,12 +2,12 @@ import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const Product = () => {
+const Popular = () => {
   const navigate = useNavigate();
   const [result, setResult] = useState([]);
   //get product of special tag from backend
   const getProduct = async () => {
-    const res = await axios.get("http://localhost:5000/api/special", {
+    const res = await axios.get("http://localhost:5000/api/popular", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -25,10 +25,10 @@ const Product = () => {
     <>
       <div className="product">
         <div className="product-heading">
-          <span>Just for u</span>
+          <span>Popular Products</span>
           <p>
             <NavLink to="/products">
-              Shop more <i class="fa-sharp fa-solid fa-right-long"></i>{" "}
+              Shop more <i class="fa-sharp fa-solid fa-right-long"></i>
             </NavLink>
           </p>
         </div>
@@ -82,4 +82,4 @@ const Product = () => {
   );
 };
 
-export default Product;
+export default Popular;

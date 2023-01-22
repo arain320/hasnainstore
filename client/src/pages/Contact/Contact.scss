@@ -3,26 +3,30 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 2rem 1rem 1rem 1rem;
+  padding: 2rem 1rem 2rem 1rem;
+  margin-bottom: 1rem;
   overflow: hidden;
-  background-color: #ffffff;
+  background:url(https://www.dropbox.com/s/jvg27swetfrr39r/whiteslider.jpg?raw=1) no-repeat center;
+  background-size: cover;
   .heading {
     width: 100%;
     text-align: center;
     span {
-      font-size: 2rem;
+      font-size: 3rem;
+      font-weight: bold;
       color: #000;
     }
   }
-  .container {
+  .contact-container {
     width: 100%;
     padding: 1rem 1rem 1rem 1rem;
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    .form {
+    .contact-form {
       width: 50%;
-      padding: 2rem 1rem 2rem 1rem;
+      height: 40rem;
+      padding: 3rem 1rem 1rem 1rem;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -33,6 +37,18 @@
         gap: 3rem;
         padding: 3rem 1rem 1rem 1rem;
         border: 0.1rem solid #777;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 0.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(1rem);
+        .heading-form{
+          width: 100%;
+          text-align: center;
+          span{
+            font-size: 2rem;
+            color: #03a9f4;
+          }
+        }
         .item {
           width: 100%;
           display: flex;
@@ -45,6 +61,7 @@
             letter-spacing: 0.1rem;
             background-color: transparent;
             border-bottom: 0.1rem solid #000000;
+            text-transform: none;
             &:focus ~ label,
             &:valid ~ label {
               top: -2rem;
@@ -55,7 +72,7 @@
           }
           label {
             font-size: 1rem;
-            color: #000000;
+            color: #03a9f4;
             position: absolute;
             top: 0;
             left: 0;
@@ -74,7 +91,9 @@
             border: none;
             padding: 0rem 1rem 0rem 1rem;
             resize: none;
+            background-color: transparent;
             border-bottom: 0.1rem solid #000000;
+            text-transform: none;
             &:focus ~ label,
             &:valid ~ label {
               top: -2rem;
@@ -100,14 +119,15 @@
     }
     .info {
       width: 50%;
-      height: auto;
-      padding: 2rem 1rem 2rem 1rem;
+      height: 40rem;
+      padding: 2rem 1rem 0rem 1rem;
       display: flex;
       align-items: center;
       justify-content: center;
       .location {
         width: 100%;
         height: 100%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
       }
     }
   }
@@ -121,19 +141,21 @@
     gap: 2rem;
     .row {
       width: 20rem;
-      height: 10rem;
+      height: 7rem;
       display: flex;
       flex-direction: row;
-      background-color: #ffffff;
-      box-shadow: 0.1rem 0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2),
-        -0.1rem -0.1rem 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+      background:#03a9f4;
+      border-radius: 0.5rem;
+      backdrop-filter: blur(1rem);
       .icon {
         width: 20%;
         display: flex;
         justify-content: center;
         align-items: center;
+        border-right: .1rem solid #ffffff;
         i {
           font-size: 2rem;
+          color: #ffffff;
           animation: scale 2s linear infinite;
         }
         @keyframes scale {
@@ -154,9 +176,9 @@
         justify-content: center;
         align-items: center;
         text-align: center;
-        background-color: #fe6900;
         span {
           text-transform: none;
+          color: #fff;
         }
       }
     }
@@ -165,10 +187,10 @@
 
 @media screen and (max-width: 600px) {
   .contact {
-    .container {
+    .contact-container {
       flex-direction: column;
       gap: 2rem;
-      .form {
+      .contact-form {
         width: 100%;
       }
       .info {
