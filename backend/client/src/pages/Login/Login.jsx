@@ -27,15 +27,11 @@ const Login = () => {
       validationSchema: singInSchema,
       onSubmit: async (values, action) => {
         try {
-          const res = await axios.post(
-            "http://localhost:5000/api/login",
-            values,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          const res = await axios.post("/api/login", values, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
           if (res.status === 200) {
             toast.success("verification link sent to your email");
           }

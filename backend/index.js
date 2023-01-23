@@ -7,6 +7,7 @@ const productRouter = require("./routes/productRoute");
 const userRouter = require("./routes/userRouter");
 const errorMessage = require("./middleWare/error");
 const cookieParser = require("cookie-parser");
+const path = require("path");
 
 const app = express();
 app.use(errorMessage);
@@ -23,6 +24,11 @@ app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 app.use("/api", productRouter);
 app.use("/api", userRouter);
 
+// static file
+app.use(express.static(path.join(__dirname, "./client/build")));
+app.get("*", function (req, res) {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
+});
 // Error Middleware
 app.use(errorMessage);
 

@@ -13,16 +13,11 @@ const Verify = () => {
   useEffect(() => {
     const verifyEmail = async () => {
       try {
-        const res = await axios.post(
-          `http://localhost:5000/api/verifyEmail/${id}`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-            },
-          }
-        );
-
-        console.log(res);
+        const res = await axios.post(`/verifyEmail/${id}`, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         if (res.status === 200) {
           dispatch(login());
           navigate("/");

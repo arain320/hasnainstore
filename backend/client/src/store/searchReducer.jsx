@@ -8,7 +8,7 @@ export const searchSlice = createSlice({
   initialState,
   reducers: {
     getValue(state, action) {
-     state.searchValue=(action.payload);
+      state.searchValue = action.payload;
     },
   },
 });

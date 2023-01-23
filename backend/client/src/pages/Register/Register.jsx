@@ -33,20 +33,15 @@ const Register = () => {
       onSubmit: async (values, action) => {
         console.log(values);
         try {
-          const res = await axios.post(
-            "http://localhost:5000/api/register",
-            values,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          const res = await axios.post("/api/register", values, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
           if (res.statusText === "Created") {
             toast.success("successfully login");
             navigate("/login");
           }
-          console.log(res);
           action.resetForm();
         } catch (error) {
           const message =

@@ -1,5 +1,4 @@
 import React from "react";
-import "./Home.scss";
 import Header from "../../components/Header/Header";
 import Slider from "../../components/Slider/Slider";
 import Hero from "../../components/Hero/Hero";
@@ -18,8 +17,8 @@ const Home = () => {
       <Hero />
       <Company />
       <Product />
-      <Popular/>
-      <Deal/>
+      <Popular />
+      <Deal />
       <GoTop />
       <Footer />
     </>

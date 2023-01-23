@@ -40,7 +40,7 @@ const Cart = () => {
                 {products?.map((item) => (
                   <>
                     <div className="bottom">
-                      <div className="box">
+                      <div className="box" key={item.id}>
                         <div className="image">
                           <img src={item.path} alt="product" />
                         </div>

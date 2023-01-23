@@ -6,7 +6,8 @@
   padding: 2rem 1rem 2rem 1rem;
   margin-bottom: 1rem;
   overflow: hidden;
-  background:url(https://www.dropbox.com/s/jvg27swetfrr39r/whiteslider.jpg?raw=1) no-repeat center;
+  background: url(https://www.dropbox.com/s/jvg27swetfrr39r/whiteslider.jpg?raw=1)
+    no-repeat center;
   background-size: cover;
   .heading {
     width: 100%;
@@ -41,10 +42,10 @@
         border-radius: 0.5rem;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         backdrop-filter: blur(1rem);
-        .heading-form{
+        .heading-form {
           width: 100%;
           text-align: center;
-          span{
+          span {
             font-size: 2rem;
             color: #03a9f4;
           }
@@ -144,7 +145,7 @@
       height: 7rem;
       display: flex;
       flex-direction: row;
-      background:#03a9f4;
+      background: #03a9f4;
       border-radius: 0.5rem;
       backdrop-filter: blur(1rem);
       .icon {
@@ -152,7 +153,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-right: .1rem solid #ffffff;
+        border-right: 0.1rem solid #ffffff;
         i {
           font-size: 2rem;
           color: #ffffff;

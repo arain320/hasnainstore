@@ -20,7 +20,7 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/contact", data, {
+      const res = await axios.post("/api/contact", data, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -59,9 +59,9 @@ const Contact = () => {
         <div className="contact-container">
           <div className="contact-form">
             <form onSubmit={handleSubmit}>
-            <div className="heading-form">
-            <span>send message</span>
-           </div>
+              <div className="heading-form">
+                <span>send message</span>
+              </div>
               <div className="name item">
                 <input
                   type="text"
@@ -105,7 +105,8 @@ const Contact = () => {
           </div>
           <div className="info">
             <div className="location">
-              <iframe title="hasnainsaleemarain"
+              <iframe
+                title="hasnainsaleemarain"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54852.24067851802!2d72.39502635358669!3d30.76713984770429!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39233de24bcbb2ef%3A0xfc8ccf6d0d3ffccf!2sPir%20Mahal%2C%20Toba%20Tek%20Singh%20District%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1673027989230!5m2!1sen!2s"
                 style={mystyle}
                 referrerpolicy="no-referrer-when-downgrade"

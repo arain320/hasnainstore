@@ -14,7 +14,7 @@ export const cartSlice = createSlice({
         item.quantity += action.payload.quantity;
       } else {
         state.products.push(action.payload);
-       /*  state.quantity += 1;
+        /*  state.quantity += 1;
         state.total += action.payload.price * action.payload.quantity; */
       }
     },

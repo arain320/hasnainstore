@@ -18,25 +18,8 @@ const Header = () => {
   const toggle = () => {
     setShow(!show);
   };
-
-  /*  useEffect(() => {
-    const auth = async () => {
-      const res = await axios.get(
-        "http://localhost:5000/api/status",
-
-        {
-          withCredentials: true,
-        }
-      );
-      if (res.status !== 200) {
-        dispatch(login());
-      }
-    };
-
-    auth();
-  }, []); */
   const handleLogout = async () => {
-    const res = await axios.get("http://localhost:5000/api/logout", null, {
+    const res = await axios.get("/api/logout", null, {
       withCredentials: true,
     });
     if (res.status === 200) {

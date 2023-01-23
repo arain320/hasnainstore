@@ -4,9 +4,6 @@ const product = require("../models/productModel");
 
 router.post("/product", async (req, res) => {
   const { name, price, url, category, company, tag, description } = req.body;
-
-  console.log(req.body);
-
   if (
     !name ||
     !price ||
@@ -117,7 +114,6 @@ router.patch("/update/:id", async (req, res) => {
 //delete product
 router.delete("/delete/:id", async (req, res) => {
   const { id } = req.params;
-  console.log(id);
   try {
     const deleteProduct = await product.findByIdAndDelete(id);
     res

@@ -211,13 +211,12 @@ router.get("/status", protect, async (req, res) => {
 //logout user
 router.get("/logout", protect, async (req, res) => {
   try {
-    const userId = req.id;
-    const user = await User.findById(userId);
-    res.cookie(String(user._id), "", {
+    res.cookie("token", "", {
       path: "/",
       httpOnly: true,
       expires: new Date(0),
-      sameSite: "lax",
+      sameSite: "none",
+      secure: true,
     });
     return res.status(200).json({
       message: "successfully logout",

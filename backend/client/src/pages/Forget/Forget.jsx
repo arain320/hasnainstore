@@ -18,15 +18,11 @@ const Forget = () => {
       validationSchema: resetSchema,
       onSubmit: async (values, action) => {
         try {
-          const res = await axios.post(
-            "http://localhost:5000/api/forget",
-            values,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
+          const res = await axios.post("/api/forget", values, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
           if (res.status === 200) {
             toast.success("please check your email");
           }
@@ -46,33 +42,33 @@ const Forget = () => {
     <>
       <div className="forget-container">
         <div className="form">
-         <div className="card">
-         <div className="heading">
-            <span>forget password</span>
-            <p>
-              <NavLink to="/login">login</NavLink>
-            </p>
+          <div className="card">
+            <div className="heading">
+              <span>forget password</span>
+              <p>
+                <NavLink to="/login">login</NavLink>
+              </p>
+            </div>
+            <form onSubmit={handleSubmit}>
+              <div className="email form-item">
+                <label htmlFor="email">email</label>
+                <input
+                  type="email"
+                  placeholder="your email"
+                  name="email"
+                  id="email"
+                  autoComplete="off"
+                  value={values.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.email && touched.email ? <p>{errors.email}</p> : null}
+              </div>
+              <div className="button">
+                <input type="submit" value="send" className="btn" />
+              </div>
+            </form>
           </div>
-          <form onSubmit={handleSubmit}>
-            <div className="email form-item">
-              <label htmlFor="email">email</label>
-              <input
-                type="email"
-                placeholder="your email"
-                name="email"
-                id="email"
-                autoComplete="off"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email ? <p>{errors.email}</p> : null}
-            </div>
-            <div className="button">
-              <input type="submit" value="send" className="btn" />
-            </div>
-          </form>
-         </div>
         </div>
       </div>
       <ToastContainer

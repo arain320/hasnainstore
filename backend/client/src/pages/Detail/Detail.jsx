@@ -37,7 +37,7 @@ const Detail = () => {
   //get product of same category from backend
   useEffect(() => {
     const getProduct = async () => {
-      const res = await axios.get(`http://localhost:5000/api/category`, {
+      const res = await axios.get(`/api/category`, {
         headers: {
           "Content-Type": "application/json",
         },
@@ -169,6 +169,7 @@ const Detail = () => {
                         <>
                           <div
                             className="product-card"
+                            key={product._id}
                             onClick={() => {
                               navigate(`/detail/${product._id}`);
                             }}

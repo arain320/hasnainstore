@@ -31,20 +31,15 @@ const Reset = () => {
       validationSchema: forgetSchema,
       onSubmit: async (values, action) => {
         try {
-          const res = await axios.post(
-            `http://localhost:5000/api/reset/${id}`,
-            values,
-            {
-              headers: {
-                "Content-Type": "application/json",
-              },
-            }
-          );
-          if (res.status === 200 ) {
+          const res = await axios.post(`/api/reset/${id}`, values, {
+            headers: {
+              "Content-Type": "application/json",
+            },
+          });
+          if (res.status === 200) {
             toast.success("password changed please login");
             navigate("/login");
           }
-          console.log(res);
           action.resetForm();
         } catch (error) {
           const message =

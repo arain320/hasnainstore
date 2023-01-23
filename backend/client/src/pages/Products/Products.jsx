@@ -25,7 +25,7 @@ const Products = () => {
 
   //get product from backend
   const getProduct = async () => {
-    const res = await axios.get(`http://localhost:5000/api/items`, {
+    const res = await axios.get(`/api/items`, {
       headers: {
         "Content-Type": "application/json",
       },
@@ -303,12 +303,13 @@ const Products = () => {
                       <>
                         <div
                           className="product-card"
+                          key={product._id}
                           onClick={() => {
                             navigate(`/detail/${product._id}`);
                           }}
                         >
                           <div className="image">
-                            <img src={product.path} alt="" />
+                            <img src={product.path} alt="product" />
                           </div>
                           <div className="name">
                             <span>{product.name}</span>

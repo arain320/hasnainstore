@@ -13,7 +13,6 @@ import Verify from "./pages/Verify/Verify";
 import Forget from "./pages/Forget/Forget";
 import Reset from "./pages/Reset/Reset";
 
-
 axios.defaults.withCredentials = true;
 const App = () => {
   return (
@@ -32,7 +31,6 @@ const App = () => {
           <Route path="/reset/:id" element={<Reset />} />
         </Routes>
       </BrowserRouter>
-     
     </>
   );
 };

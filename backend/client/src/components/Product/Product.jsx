@@ -7,7 +7,7 @@ const Product = () => {
   const [result, setResult] = useState([]);
   //get product of special tag from backend
   const getProduct = async () => {
-    const res = await axios.get("http://localhost:5000/api/special", {
+    const res = await axios.get("/api/special", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -39,6 +39,7 @@ const Product = () => {
                   <>
                     <div
                       className="product-card"
+                      key={product._id}
                       onClick={() => {
                         navigate(`/detail/${product._id}`);
                       }}
