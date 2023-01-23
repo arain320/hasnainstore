@@ -113,7 +113,7 @@ router.post("/login", async (req, res) => {
         expiresAt: Date.now() + 30 * (60 * 1000), // 30 minutes
       }).save();
       // create reset url
-      const verifyUrl = `${process.env.FRONTEND_URL}/verifyEmail/${resetToken}`;
+      const verifyUrl = `/verifyEmail/${resetToken}`;
       //create email
       const message = `
       <h2>Hello ${findUser.name}</h2>
@@ -260,7 +260,7 @@ router.post("/forget", async (req, res) => {
       expiresAt: Date.now() + 30 * (60 * 1000), // 30 minutes
     }).save();
     // create reset url
-    const resetUrl = `${process.env.FRONTEND_URL}/reset/${resetToken}`;
+    const resetUrl = `/reset/${resetToken}`;
     //create email
     const message = `
       <h2>Hello ${findUser.name}</h2>
